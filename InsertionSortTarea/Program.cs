@@ -1,26 +1,27 @@
 ﻿using System;
 
-class InsertionSortExample
+class InsertionSort
 {
     static void Main()
     {
-        int[] calificaciones = { 85, 72, 90, 68, 74, 95, 60, 88, 79, 83 };
+        int[] grades = { 85, 72, 90, 68, 74, 95, 60, 88, 79, 83 };
 
-        for (int i = 1; i < calificaciones.Length; i++)
+        for (int i = 1; i < grades.Length; i++)
         {
-            int actual = calificaciones[i];
+            int current = grades[i];
             int j = i - 1;
 
-            while (j >= 0 && calificaciones[j] > actual)
+            while (j >= 0 && grades[j] > current)
             {
-                calificaciones[j + 1] = calificaciones[j];
+                grades[j + 1] = grades[j];
                 j--;
             }
-            calificaciones[j + 1] = actual;
+            grades[j + 1] = current;
         }
 
-        Console.WriteLine("Calificaciones ordenadas:");
-        foreach (int c in calificaciones)
-            Console.Write(c + " ");
+        Console.WriteLine("Sorted grades:");
+        foreach (int g in grades)
+            Console.Write(g + " ");
     }
 }
+
